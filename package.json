@@ -1,0 +1,38 @@
+{
+  "name": "web422-summer-2019-assignment2",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WEB422 Summer 2019 Assignment 2",
+  "scripts": {
+    "mkdir": "mkdirp assignment2-submission",
+    "eslint-to-file": "npm run eslint 1> assignment2-submission/eslint.log 2>&1",
+    "eslint": "eslint src/**/*.js",
+    "prettier": "prettier --write \"src/**/*.{html,js,css}\"",
+    "prezip": "rimraf assignment2-submission.zip",
+    "zip": "bestzip assignment2-submission.zip assignment2-submission/*",
+    "copy-src": "copyfiles package*.json src/*.html src/**/* assignment2-submission",
+    "prepare-submission": "run-s -n -c prettier mkdir copy-src eslint-to-file zip",
+    "clean": "rimraf assignment2-submission.zip assignment2-submission .cache dist",
+    "parcel": "parcel src/index.html",
+    "start": "npm run parcel",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "bestzip": "^2.1.2",
+    "copyfiles": "^2.1.0",
+    "eslint": "^5.12.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jquery": "^1.5.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^1.12.3",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "lodash-es": "^4.17.11",
+    "moment": "^2.24.0"
+  }
+}

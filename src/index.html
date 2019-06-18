@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Load Bootstrap's CSS from the node_modules/ dir. Run `npm install` first -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Helper styles for the Bootstrap table header -->
+    <link rel="stylesheet" href="./styles/bootstrap-header-table.css" />
+    <!-- Your styles can go in src/styles/styles.css -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <title>WEB422 - Assignment 2</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Assignment 2 - Employee Details</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <input
+            type="text"
+            id="employee-search"
+            class="form-control"
+            placeholder="Search for Employees"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="container bootstrap-header-table">
+          <div class="row header-row">
+            <div>
+              <div class="col-xs-4 header-column">First Name</div>
+              <div class="col-xs-4 header-column">Last Name</div>
+              <div class="col-xs-4 header-column">Position</div>
+            </div>
+          </div>
+          <div id="employees-table" class="row body-rows"></div>
+        </div>
+      </div>
+    </div>
+    <div id="genericModal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Title</h4>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
